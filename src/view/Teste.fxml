@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <StackPane prefHeight="73.0" prefWidth="800.0" style="-fx-background-color: orange;">
+         <children>
+            <Label text="FL MATERIAIS ELÉTRICOS E HIDRAULICOS" textFill="#0040ff">
+               <font>
+                  <Font name="Garamond Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <TabPane layoutY="74.0" prefHeight="528.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Pedido">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="49.0" layoutY="25.0" text="Número do pedido:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="66.0" layoutY="266.0" text="Previsão entrega:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="47.0" layoutY="147.0" text="Código do produto:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="372.0" layoutY="187.0" text="Forma de pagamento:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="429.0" layoutY="267.0" text="Valor de troco:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="105.0" layoutY="187.0" text="Quantidade:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="107.0" text="Código do cliente:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="116.0" layoutY="226.0" text="Valor total:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtcodproduto" layoutX="226.0" layoutY="149.0" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtnumeropedido" layoutX="226.0" layoutY="27.0" onMouseClicked="#limparpedido" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtvalortotalpedido" layoutX="226.0" layoutY="227.0" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtvalortroco" layoutX="560.0" layoutY="270.0" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtformapagamento" layoutX="560.0" layoutY="188.0" prefHeight="25.0" prefWidth="111.0" />
+                        <DatePicker fx:id="datentregapedido" layoutX="226.0" layoutY="268.0" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtquantidadeprodutopedido" layoutX="226.0" layoutY="190.0" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtcodclientepedido" layoutX="226.0" layoutY="108.0" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtnomeprodutopedido" layoutX="378.0" layoutY="149.0" prefHeight="25.0" prefWidth="375.0" />
+                        <TextField fx:id="txtnomeclientepedido" layoutX="378.0" layoutY="109.0" prefHeight="25.0" prefWidth="375.0" />
+                        <Button fx:id="btncadastrarpedido" layoutX="261.0" layoutY="354.0" mnemonicParsing="false" text="Finalizar" />
+                        <Button fx:id="btnlimparpedido" layoutX="429.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#limparpedido" text="Limpar" />
+                        <Label layoutX="28.0" layoutY="68.0" text="Código do funcionario:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtcodfuncionariopedido" layoutX="226.0" layoutY="69.0" prefHeight="25.0" prefWidth="111.0" />
+                        <Label layoutX="453.0" layoutY="227.0" text="Valor pago:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtvalorpago" layoutX="560.0" layoutY="229.0" prefHeight="25.0" prefWidth="111.0" />
+                        <TextField fx:id="txtnomefuncionariopedido" layoutX="378.0" layoutY="69.0" prefHeight="25.0" prefWidth="375.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Produto">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutY="-2.0" prefHeight="501.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="Cadastrar produto">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="61.0" layoutY="23.0" text="Nome do produto:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="129.0" layoutY="74.0" text="Categoria:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="67.0" layoutY="125.0" text="Quantidade inical:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="110.0" layoutY="212.0" text="Valor varejo:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="95.0" layoutY="255.0" text="Valor atacado:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="98.0" layoutY="417.0" text="Código:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="359.0" layoutY="417.0" text="Código de barra:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtcadastrarproduto" layoutX="230.0" layoutY="24.0" prefHeight="25.0" prefWidth="423.0" />
+                                          <TextField fx:id="txtcategoriacadastrarproduto" layoutX="230.0" layoutY="75.0" />
+                                          <TextField fx:id="txtqtinicialprodutocadastrar" layoutX="230.0" layoutY="126.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <TextField fx:id="txtvalorvarejoproduto" layoutX="230.0" layoutY="213.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <TextField fx:id="txtvaloratacadoproduto" layoutX="230.0" layoutY="256.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <Button fx:id="btncadastrarproduto" layoutX="271.0" layoutY="363.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnlimparproduto" layoutX="458.0" layoutY="363.0" mnemonicParsing="false" text="Limpar" />
+                                          <TextField fx:id="txtcadastraproduto" layoutX="170.0" layoutY="418.0" />
+                                          <TextField fx:id="txtcodbarraproduto" layoutX="504.0" layoutY="418.0" prefHeight="25.0" prefWidth="188.0" />
+                                          <Label layoutX="134.0" layoutY="297.0" text="Validade:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="97.0" layoutY="167.0" text="Valor compra:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtvalorcompraproduto" layoutX="230.0" layoutY="168.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <DatePicker fx:id="datvalidadeproduto" layoutX="230.0" layoutY="298.0" prefHeight="25.0" prefWidth="146.0" />
+                                          <Label layoutX="412.0" layoutY="125.0" text="Quantidade atual:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtqtatualprodutocadastrar" layoutX="575.0" layoutY="126.0" prefHeight="25.0" prefWidth="78.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Estoque">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="800.0">
+                                       <children>
+                                          <TableView layoutY="-2.0" prefHeight="437.0" prefWidth="800.0">
+                                             <columns>
+                                                <TableColumn fx:id="tbccodigoprodutorelat" prefWidth="63.0" text="Cod" />
+                                                <TableColumn fx:id="tbcnomeprodutorelat" prefWidth="164.0" text="Nome" />
+                                                <TableColumn fx:id="tbccategoriarelat" minWidth="0.0" prefWidth="118.0" text="Categoria" />
+                                                <TableColumn fx:id="tbcqtinicialrelat" prefWidth="58.0" text="Qt incial" />
+                                                <TableColumn fx:id="tbcqtatualrelat" prefWidth="56.0" text="Qt atual" />
+                                                <TableColumn fx:id="tbcvaloratacadorelat" minWidth="0.0" prefWidth="87.0" text="Valor atacado" />
+                                                <TableColumn fx:id="tbcvalorvarejorelat" prefWidth="78.0" text="Valor varejo" />
+                                                <TableColumn fx:id="tbcvalorcomprarelat" minWidth="0.0" prefWidth="104.0" text="Valor de compra" />
+                                                <TableColumn fx:id="tbcvalidaderelat" prefWidth="71.0" text="Validade" />
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="btnremoverprodutorelat" layoutX="581.0" layoutY="440.0" mnemonicParsing="false" text="Remover" />
+                                          <Button fx:id="btncopiarprodutoelat" layoutX="674.0" layoutY="439.0" mnemonicParsing="false" text="Copiar" />
+                                          <TextField fx:id="txtpesquisarproduto" layoutX="117.0" layoutY="440.0" />
+                                          <Label layoutX="60.0" layoutY="444.0" text="Pesquisar:" />
+                                          <Button fx:id="btnokpesqcproduto" layoutX="272.0" layoutY="440.0" mnemonicParsing="false" text="OK" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Cliente">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="800.0">
+                     <children>
+                        <TabPane layoutY="-3.0" prefHeight="500.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="Cadastrar cliente">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="504.0" prefWidth="800.0">
+                                       <children>
+                                          <Label layoutX="63.0" layoutY="34.0" text="Nome do cliente:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="36.0" layoutY="108.0" text="Data de nascimento:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="162.0" layoutY="188.0" text="CEP:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="152.0" layoutY="312.0" text="Email:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="137.0" layoutY="73.0" text="Genêro:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="127.0" layoutY="227.0" text="Número:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="474.0" layoutY="227.0" text="Complemento:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="37.0" layoutY="269.0" text="Telefone residencial:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="461.0" layoutY="269.0" text="Telefone celular:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="554.0" layoutY="108.0" text="CPF:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btncadastrarcliente" layoutX="282.0" layoutY="381.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnlimparcliente" layoutX="459.0" layoutY="381.0" mnemonicParsing="false" text="Limpar" />
+                                          <Label layoutX="288.0" layoutY="432.0" text="Código:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtcodigocliente" layoutX="360.0" layoutY="433.0" />
+                                          <TextField fx:id="txtnomedocliente" layoutX="214.0" layoutY="36.0" prefHeight="25.0" prefWidth="556.0" />
+                                          <TextField fx:id="txtcepcliente" layoutX="214.0" layoutY="189.0" prefHeight="25.0" prefWidth="100.0" />
+                                          <TextField fx:id="txtcpfcliente" layoutX="602.0" layoutY="109.0" prefHeight="25.0" prefWidth="164.0" />
+                                          <TextField fx:id="txtenderecocliente" layoutX="327.0" layoutY="189.0" prefHeight="25.0" prefWidth="440.0" />
+                                          <TextField fx:id="txtnumerocliente" layoutX="214.0" layoutY="228.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="txtcomplementocliente" layoutX="598.0" layoutY="228.0" prefHeight="25.0" prefWidth="167.0" />
+                                          <TextField fx:id="txtemailcliente" layoutX="214.0" layoutY="313.0" prefHeight="25.0" prefWidth="550.0" />
+                                          <TextField fx:id="txttelresidencialcliente" layoutX="214.0" layoutY="270.0" prefHeight="25.0" prefWidth="167.0" />
+                                          <TextField fx:id="txttelcelularcliente" layoutX="598.0" layoutY="270.0" prefHeight="25.0" prefWidth="167.0" />
+                                          <DatePicker fx:id="dpdatadenascliente" layoutX="214.0" layoutY="109.0" prefHeight="25.0" prefWidth="133.0" />
+                                          <RadioButton fx:id="txtgeneromasculino" layoutX="214.0" layoutY="78.0" mnemonicParsing="false" text="Masculino" />
+                                          <RadioButton fx:id="txtgenerofeminino" layoutX="305.0" layoutY="78.0" mnemonicParsing="false" text="Feminino" />
+                                          <Label layoutX="140.0" layoutY="148.0" text="Estado:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cmbestadocliente" layoutX="214.0" layoutY="149.0" prefWidth="150.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Clientes">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView prefHeight="433.0" prefWidth="800.0">
+                                             <columns>
+                                                <TableColumn fx:id="txtcodigo" prefWidth="75.0" text="Cod" />
+                                                <TableColumn fx:id="txtnome" prefWidth="75.0" text="Nome" />
+                                                <TableColumn fx:id="txtgenero" prefWidth="50.0" text="Genêro" />
+                                                <TableColumn fx:id="txtnascimento" prefWidth="77.0" text="Nasc" />
+                                                <TableColumn fx:id="txtendereco" prefWidth="98.0" text="Endereço" />
+                                                <TableColumn fx:id="txtbairro" prefWidth="75.0" text="Bairro" />
+                                                <TableColumn fx:id="txtcep" prefWidth="75.0" text="Cep" />
+                                                <TableColumn fx:id="txtcomplemento" prefWidth="64.0" text="Complemento" />
+                                                <TableColumn fx:id="txttelefone" prefWidth="86.0" text="Telefone" />
+                                                <TableColumn fx:id="txtemail" prefWidth="66.0" text="Email" />
+                                                <TableColumn fx:id="txtcpf" prefWidth="84.0" text="CPF         " />
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="btnremoverclienterelat" layoutX="579.0" layoutY="438.0" mnemonicParsing="false" text="Remover" />
+                                          <Button fx:id="btncopiarclienterelat" layoutX="672.0" layoutY="438.0" mnemonicParsing="false" text="Copiar" />
+                                          <Button fx:id="btnokclientepes" layoutX="262.0" layoutY="438.0" mnemonicParsing="false" text="OK" />
+                                          <Label layoutX="47.0" layoutY="442.0" text="Pesquisar:" />
+                                          <TextField fx:id="txtpesquisarcliente" layoutX="106.0" layoutY="438.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Funcionario">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutY="-3.0" prefHeight="500.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="Cadastrar funcionario">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="80.0" layoutY="42.0" prefHeight="27.0" prefWidth="201.0" text="Nome do funcionario:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="173.0" layoutY="86.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtnomefuncionario" layoutX="270.0" layoutY="43.0" prefHeight="25.0" prefWidth="428.0" />
+                                          <Button fx:id="btncadastrarfuncionario" layoutX="343.0" layoutY="98.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="114.0" text="Cadastrar">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="txtcodigofuncionario" layoutX="341.0" layoutY="362.0" prefHeight="25.0" prefWidth="115.0" />
+                                          <Label layoutX="267.0" layoutY="361.0" prefHeight="27.0" prefWidth="74.0" text="Código:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Funcionarios">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutY="-1.0" prefHeight="436.0" prefWidth="800.0">
+                                             <columns>
+                                                <TableColumn fx:id="tbccodigofuncionariorelat" prefWidth="66.0" text="Código" />
+                                                <TableColumn fx:id="tbcnomefuncionariorelat" prefWidth="162.0" text="Nome" />
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="btnremoverfuncionariorelat" layoutX="586.0" layoutY="440.0" mnemonicParsing="false" text="Remover" />
+                                          <Button fx:id="btncopiarfuncionariorelat" layoutX="673.0" layoutY="440.0" mnemonicParsing="false" text="Copiar" />
+                                          <Button fx:id="btnokfuncionariorelat" layoutX="249.0" layoutY="439.0" mnemonicParsing="false" text="OK" />
+                                          <Label layoutX="34.0" layoutY="443.0" text="Pesquisar:" />
+                                          <TextField fx:id="txtpesquisarfuncionario" layoutX="93.0" layoutY="439.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Entrega">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="230.0" layoutY="38.0" text="Código do cliente:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtcodclienteentrega" layoutX="383.0" layoutY="39.0" />
+                        <Button fx:id="btnbuscarentrega" layoutX="367.0" layoutY="90.0" mnemonicParsing="false" text="Buscar" />
+                        <TableView layoutX="160.0" layoutY="148.0" prefHeight="309.0" prefWidth="480.0">
+                           <columns>
+                              <TableColumn fx:id="tbcnumeropedidoentrega" prefWidth="152.0" text="Número do pedido" />
+                              <TableColumn fx:id="tbcnomeclientenetrega" prefWidth="141.0" text="Nome do Cliente" />
+                              <TableColumn fx:id="tbcdataprevistaentrega" prefWidth="114.0" text="Data prevista" />
+                              <TableColumn fx:id="tbcsituacaoentrega" prefWidth="75.0" text="Situação" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Caixa">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutY="-3.0" prefHeight="501.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="Caixa atual">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="237.0" layoutY="34.0" text="Saldo atual:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="287.0" layoutY="75.0" text="Data:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="275.0" layoutY="114.0" text="Inserir:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="272.0" layoutY="159.0" text="Retirar:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtsaldoatualcaixa" layoutX="345.0" layoutY="35.0" />
+                                          <TextField fx:id="txtinserircaixa" layoutX="345.0" layoutY="115.0" />
+                                          <TextField fx:id="txtretirarcaixa" layoutX="345.0" layoutY="160.0" />
+                                          <DatePicker fx:id="dpdatacaixa" layoutX="345.0" layoutY="76.0" prefHeight="25.0" prefWidth="150.0" />
+                                          <Button fx:id="btnenviarcaixa" layoutX="387.0" layoutY="210.0" mnemonicParsing="false" text="Enviar" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Relatório">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutY="3.0" prefHeight="433.0" prefWidth="800.0">
+                                             <columns>
+                                                <TableColumn fx:id="tbcdatacaixa" prefWidth="169.0" text="Data" />
+                                                <TableColumn fx:id="tbcentroucaixa" prefWidth="299.0" text="Entrou" />
+                                                <TableColumn fx:id="tbcsaiucaixa" prefWidth="331.0" text="Saiu" />
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="btnremovercaixarelat" layoutX="579.0" layoutY="440.0" mnemonicParsing="false" text="Remover" />
+                                          <Button fx:id="btncopiarcaixarelat" layoutX="672.0" layoutY="439.0" mnemonicParsing="false" text="Copiar" />
+                                          <Button fx:id="btnokcaixarelat" layoutX="262.0" layoutY="440.0" mnemonicParsing="false" text="OK" />
+                                          <Label layoutX="47.0" layoutY="444.0" text="Pesquisar:" />
+                                          <TextField fx:id="txtpesquisarcaixa" layoutX="106.0" layoutY="440.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
